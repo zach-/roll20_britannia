@@ -1,11 +1,16 @@
 from PIL import Image
-import os
-import sys
+from glob import glob
+from re import search
 
 
 def main():
-    im = Image.open('../tileset/Landtile 1004.bmp')
-    print(im.format, im.size, im.mode)
+    tile_list = glob('../tileset/*.bmp')
+    for tile in tile_list:
+        num = search('\d+', tile)
+        im = Image.open(tile)
+        im = im.rotate(45)
+        filename = '../tileset/processed/tile_' + str(num.group(0)) + '.bmp'
+        im.save(filename)
 
 
 if __name__ == '__main__':
