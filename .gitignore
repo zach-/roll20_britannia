@@ -98,3 +98,6 @@ statics_pre/
 statics_resized/
 water_images/
 tileset/
+map_json/
+static_final/
+final_images/
