@@ -17,13 +17,14 @@ def change_values(data):
 
 
 def main():
-    file_list = glob('../map_json/*.txt')
+    file_list = glob('../map_json/Dungeon*.txt')
     dir = '../tileset/tile_'
     ext = '.jpg'
-    coorx = 9920
-    coory = 15872
+    coorx = 7936
+    coory = 8091
     for file in file_list:
         num = search('\d+', file)
+        print('Started processing wolrd file ' + str(num.group(0)))
         new_img = Image.new('RGB', (coorx, coory))
         with open(file) as json_data:
             data = json.load(json_data)
@@ -37,8 +38,9 @@ def main():
         # new_img.paste(img, (cell["X"], cell["Y"]))
             except IOError as err:
                 print err
-            filename = './map_json/world_file_' + str(num.group(0)) + '.jpg'
-            new_img.save(filename)
+        filename = '../map_images/dungeon_file_' + str(num.group(0)) + '.jpg'
+        new_img.save(filename)
+        print('Finished processing world file ' + str(num.group(0)))
     # for x in xrange(len(data)):
     #     tupl = (data[x]["ID"])
     #     tuple_list.append(tupl)

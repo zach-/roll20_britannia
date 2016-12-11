@@ -91,3 +91,9 @@ ENV/
 # images
 raw_images/
 tmp/
+statics/
+map_images/
+map_json/
+statics_pre/
+statics_resized/
+water_images/
