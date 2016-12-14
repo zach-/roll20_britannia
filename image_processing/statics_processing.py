@@ -9,8 +9,8 @@ def main():
         num = search('0x.+?\.', tile)
         num = int(str(num.group(0))[:-1], 0)
         im = Image.open(tile)
-        im = im.rotate(45)
-        filename = '../statics_pre/static_' + str(num) + '.png'
+        #im = im.rotate(45)
+        filename = '../statics_nonrotated/static_' + str(num) + '.png'
         im.save(filename)
 
 
