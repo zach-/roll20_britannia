@@ -17,11 +17,11 @@ def change_values(data):
 
 
 def main():
-    file_list = glob('../map_json/Dungeon*.txt')
+    file_list = glob('../map_json/World*.txt')
     dir = '../tileset/tile_'
     ext = '.jpg'
-    coorx = 7936
-    coory = 8091
+    coorx = 9920
+    coory = 15872
     for file in file_list:
         num = search('\d+', file)
         print('Started processing wolrd file ' + str(num.group(0)))

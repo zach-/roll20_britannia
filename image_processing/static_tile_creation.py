@@ -17,14 +17,14 @@ def change_values(data):
 
 
 def main():
-    file_list = glob('../map_json/DungeonMapStatics*.txt')
+    file_list = glob('../map_json/WorldMapStatics*.txt')
     dir = '../static_final/static_'
     ext = '.png'
-    coorx = 7936
-    coory = 8091
+    coorx = 9920
+    coory = 15872
     for file in file_list:
         num = search('\d+', file)
-        print('Started processing wolrd file ' + str(num.group(0)))
+        print('Started processing world file ' + str(num.group(0)))
         new_img = Image.new('RGBA', (coorx, coory))
         with open(file) as json_data:
             data = json.load(json_data)
@@ -42,7 +42,7 @@ def main():
         # new_img.paste(img, (cell["X"], cell["Y"]))
                 except IOError as err:
                     print err
-        filename = '../map_images/dungeon_statics_' + str(num.group(0)) + '.png'
+        filename = '../map_images/world_statics_' + str(num.group(0)) + '.png'
         new_img.save(filename)
         print('Finished processing world file ' + str(num.group(0)))
 

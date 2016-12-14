@@ -12,7 +12,7 @@ def main():
             img.format('png')
             img.transparent_color('#ffffff')
             img.rotate(45)
-        filename = '../statics_resized/static_' + str(num) + '.png'
+        filename = '../statics_nonrotated/static_' + str(num) + '.png'
         img.save(filename=filename)
 
 
